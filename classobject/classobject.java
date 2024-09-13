@@ -1,3 +1,4 @@
+package classobject;
 public class classobject {
     int x=5;
 
