@@ -4,6 +4,7 @@ public class classobject {
 
     public static void main(String[] args){
         classobject cl=new classobject();
+        //access the attributes of class//
         System.out.println(cl.x);
     }
 }
