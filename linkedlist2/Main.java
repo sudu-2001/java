@@ -1,3 +1,4 @@
+package linkedlist2;
 import java.util.Scanner;
 
 import javax.swing.text.Style;
@@ -50,6 +51,27 @@ class taskmanager{
     }
    }
 
+   public void removetask(String taskname){
+
+    Iterator<Task> iterator=taskqueue.iterator();
+
+    while (iterator.hasNext()) {
+
+        Task task=iterator.next();
+
+        if(task.taskname.equals(taskname)){
+
+            iterator.remove();
+
+        }
+        
+    }
+
+    System.out.println("The task has been removed: " + taskname);
+
+
+   }
+
 }
 public class Main{
 
@@ -63,7 +85,7 @@ public class Main{
 
         while (running) {
 
-            System.out.println("Enter the choice \n1. Add Tasks\n2. Listall\n3. Exit");
+            System.out.println("Enter the choice \n1. Add Tasks\n2. Listall\n3. remove\n4. Exit");
 
             int choice= sc.nextInt();
 
@@ -91,6 +113,16 @@ public class Main{
                     break;
 
                 case 3:
+
+                    System.out.println("Enter the task name to remove: ");
+
+                    String task=sc.nextLine();
+
+                    manager.removetask(task);
+
+                    break;
+
+                case 4:
 
                     running=false;
                     
