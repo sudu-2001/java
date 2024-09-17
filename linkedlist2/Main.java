@@ -72,6 +72,18 @@ class taskmanager{
 
    }
 
+   public void clearlist(){
+
+        taskqueue.clear();
+
+        System.out.println("the list is emplty...");
+   }
+
+   public int listcount(){
+
+    return taskqueue.size();
+   }
+
 }
 public class Main{
 
@@ -85,7 +97,7 @@ public class Main{
 
         while (running) {
 
-            System.out.println("Enter the choice \n1. Add Tasks\n2. Listall\n3. remove\n4. Exit");
+            System.out.println("Enter the choice \n1. Add Tasks\n2. Listall\n3. Remove\n4. Clear\n5. Size\n6. Exit");
 
             int choice= sc.nextInt();
 
@@ -123,6 +135,20 @@ public class Main{
                     break;
 
                 case 4:
+
+                    manager.clearlist();
+
+                    break;
+
+                case 5:
+
+                    int count=manager.listcount();
+
+                    System.out.println("the size of list is : " + count);
+
+                    break;
+
+                case 6:
 
                     running=false;
                     
