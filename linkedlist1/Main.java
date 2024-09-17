@@ -1,3 +1,4 @@
+package linkedlist1;
 import java.util.Iterator;
 
 import java.util.LinkedList;
@@ -50,6 +51,25 @@ class Taskmanager{
             System.out.println("the task is removed" + task);
         }
     }
+
+    public Task peektask(){
+
+            if (taskqueue.isEmpty()){
+
+                System.out.println("No tsaks are listed");
+
+                return null;
+            }
+
+            else{
+
+                Task task=taskqueue.peek();
+
+                System.out.println("The task at the top is : "+ task);
+
+                return task;
+            }
+    }
 }
 
 public class Main {
@@ -64,7 +84,7 @@ public class Main {
 
         while (running) {  // Keep the program running until the user chooses to exit
 
-            System.out.println("Enter your choice: \n1. Add Task\n2. Process Task\n3. Exit");
+            System.out.println("Enter your choice: \n1. Add Task\n2. Process Task\n3. peektask\n4. Exit");
 
             int choice = sc.nextInt();
 
@@ -96,6 +116,12 @@ public class Main {
                 break;
 
             case 3:
+
+                manager.peektask();
+
+                break;
+
+            case 4:
 
                 running=false;
 
