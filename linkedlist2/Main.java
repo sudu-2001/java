@@ -1,7 +1,7 @@
 package linkedlist2;
+
 import java.util.Scanner;
 
-import javax.swing.text.Style;
 
 import java.util.LinkedList;
 
@@ -152,10 +152,8 @@ public class Main{
 
                     running=false;
                     
-
-                        System.out.println("The programme is terminating.....");
+                    System.out.println("The programme is terminating.....");
                     
-
                     break;
             
                 default:
