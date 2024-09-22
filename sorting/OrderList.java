@@ -1,16 +1,17 @@
 package sorting;
 
-import java.util.Collections;
-
 import java.util.Scanner;
 
 import java.util.ArrayList;
+
+import java.util.List;
+
+import java.util.Collections;
 
 import java.util.Comparator;
 
 import java.util.Date;
 
-import java.util.List;
 
 public class OrderList {
 
@@ -22,31 +23,33 @@ public class OrderList {
 
         System.out.println("Enter the number of orders: ");
 
-        int noorders=sc.nextInt();
+        int noorder=sc.nextInt();
 
-        for ( int i=0; i<noorders ; i++){
+        for (int i=0 ; i<noorder ; i++){
 
-            System.out.println("Enetr the OrderId: " +(i+1)+ ":");
+            System.out.println("Enter the OrderId: ");
 
             String OrderId=sc.nextLine();
 
-            System.out.println("Enter the Status: ");
+            sc.nextLine();
 
-            String status=sc.nextLine();
-
-            System.out.println("Enter the amount: ");
+            System.out.println("Enter the Amount: ");
 
             Double amount=sc.nextDouble();
 
             sc.nextLine();
 
+            System.out.println("Enter the status: ");
+
+            String status=sc.nextLine();
+
             Date date=null;
 
-            boolean validate=false;
+            boolean validdate=false;
 
-            while (!validate) {
+            while (!validdate) {
 
-                System.out.println("Enter the date in the format od YYYY-MM-DD");
+                System.out.println("Enter the date in the format YYYY-MM-DD");
 
                 String dateString=sc.nextLine();
 
@@ -54,28 +57,27 @@ public class OrderList {
 
                     date=java.sql.Date.valueOf(dateString);
 
-                    validate=true;
-
+                    validdate=true;
                 }
-
+                
                 catch(IllegalArgumentException e){
 
-                    System.out.println("Enter the valid date");
+                    System.out.println("Invalide date");
                 }
-
-
-                
             }
 
             orders.add(new Order(date, OrderId, amount, status));
-            
-
         }
-        Collections.sort(orders,Comparator.comparing(Order::getamount));
 
-        System.out.println("order by date");
+        System.out.println("Ordered By amount");
+
+        Collections.sort(orders,Comparator.comparing(Order::getamount));
 
         orders.forEach(System.out::println);
 
+
+
+        
     }
+    
 }
