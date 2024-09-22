@@ -1,4 +1,4 @@
-package employee;
+package hashtable;
 
 import java.util.*;
 
