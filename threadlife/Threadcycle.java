@@ -1,3 +1,5 @@
+package threadlife;
+
 class Mythread extends Thread
 {
 
