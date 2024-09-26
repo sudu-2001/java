@@ -39,6 +39,7 @@ public class UserRegister {
         String password=sc.nextLine();
 
         validatePassword(password);
+
         
     }
 
