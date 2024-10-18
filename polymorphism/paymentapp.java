@@ -57,7 +57,7 @@ class paymentprocessor{
 public class paymentapp {
 
     public static void main(String[] args) {
-        
+
         paymentmethod paypal=new paypal("xyz@gmail.com");
 
         paymentmethod creditcard=new creditcard("123-456-3462");
@@ -70,9 +70,6 @@ public class paymentapp {
 
         process2.paymentprocess(3000);
 
-        
-        
     }
-    
 
 }
